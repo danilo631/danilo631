@@ -3,7 +3,7 @@ const axios = require("axios");
 
 // Configurações
 const GITHUB_USERNAME = "danilo631"; // Substitua pelo seu nome de usuário do GitHub
-const GITHUB_TOKEN = process.env.API_TOKEN; // Novo nome do token
+const GITHUB_TOKEN = process.env.API_TOKEN; // Token do GitHub
 
 // Função para buscar repositórios do GitHub
 async function fetchRepositories() {
