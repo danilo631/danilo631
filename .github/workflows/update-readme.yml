@@ -22,7 +22,7 @@ jobs:
 
       - name: Generate README
         env:
-          API_TOKEN: ${{ secrets.API_TOKEN }} # Usando o novo nome do segredo
+          API_TOKEN: ${{ secrets.API_TOKEN }} # Usando o token do GitHub
         run: node generate-readme.js
 
       - name: Commit and push changes
