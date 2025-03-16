@@ -1,8 +1,6 @@
-name: Update README
+name: Update README Every 30 Seconds
 
 on:
-  schedule:
-    - cron: "0 0 * * *" # Executa todos os dias à meia-noite
   workflow_dispatch: # Permite executar manualmente
 
 jobs:
@@ -20,15 +18,18 @@ jobs:
       - name: Install dependencies
         run: npm install axios
 
-      - name: Generate README
+      - name: Run script in a loop
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }} # Usando o token do GitHub
-        run: node generate-readme.js
-
-      - name: Commit and push changes
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add README.md
-          git commit -m "Updated README with latest projects"
-          git push
+          while true; do
+            echo "Running script to update README..."
+            node generate-readme.js
+            git config --global user.name "GitHub Actions"
+            git config --global user.email "actions@github.com"
+            git add README.md
+            git commit -m "Updated README with latest projects" || echo "No changes to commit."
+            git push || echo "Failed to push changes."
+            echo "Waiting for 30 seconds before the next update..."
+            sleep 30
+          done
