@@ -125,18 +125,10 @@ ${repo.description}
 
 ---
 
-## 📅 Streak Stats
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${GITHUB_USERNAME}&theme=dark&hide_border=true" alt="Streak Stats" />
-</div>
-
----
-
 ## 📊 Contribution Graph
 
 <div align="center">
-  <img src="https://activity-graph.herokuapp.com/graph?username=${GITHUB_USERNAME}&theme=dark&bg_color=000000&hide_border=true" alt="Contribution Graph" />
+  <img src="https://ghchart.rshah.org/${GITHUB_USERNAME}" alt="GitHub Contribution Graph" />
 </div>
 
 ---
@@ -144,6 +136,38 @@ ${repo.description}
 ## 📚 Featured Projects
 
 ${projectsSection}
+
+---
+
+## 🧠 Skills
+
+<div align="center">
+
+### Programming Languages
+<div style="display: flex; gap: 10px;">
+  <div style="background-color: #1e1e1e; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center; width: 150px;">
+    JavaScript<br>
+    <progress value="90" max="100"></progress> 90%
+  </div>
+  <div style="background-color: #1e1e1e; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center; width: 150px;">
+    Python<br>
+    <progress value="80" max="100"></progress> 80%
+  </div>
+</div>
+
+### Frameworks & Tools
+<div style="display: flex; gap: 10px;">
+  <div style="background-color: #1e1e1e; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center; width: 150px;">
+    React<br>
+    <progress value="85" max="100"></progress> 85%
+  </div>
+  <div style="background-color: #1e1e1e; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center; width: 150px;">
+    Node.js<br>
+    <progress value="75" max="100"></progress> 75%
+  </div>
+</div>
+
+</div>
 
 ---
 
@@ -162,7 +186,7 @@ ${projectsSection}
 ## 🎧 Coding Vibes
 
 <div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzU3ZmQwNmYxZmY1ZjIyZTJhMzEzYzRkNzY0YzE5YjQwZjIyOTIwMTVmODg4NyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZFlkJmN0PWc/WSHMdL0O5Vt0/giphy.gif" width="400px" alt="Coding Gif"/>
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzU3ZmQwNmYxZmY1ZjIyZTJhMzEzYzRkNzY0YzE5YjQwZjIyOTIwMTVmODg4NyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZFlyJmN0PWc/WSHMdL0O5Vt0/giphy.gif" width="400px" alt="Coding Gif"/>
 </div>
 
 ---
