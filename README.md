@@ -2,9 +2,9 @@
 
 <div align="center">
 
-# 👨‍💻 Welcome to My GitHub Profile!
+# 🚀 Welcome to My GitHub Profile!
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&pause=1000&color=FFD700&center=true&vCenter=true&width=600&lines=Hi!+I'm+Danilo+%F0%9F%91%8B;Fullstack+Developer;AI+%2F+ML+Enthusiast;Building+the+Future+with+Code!" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&pause=1000&color=00FF00&center=true&vCenter=true&width=600&lines=Hi!+I'm+Danilo+%F0%9F%91%8B;Fullstack+Developer;AI+%2F+ML+Enthusiast;Building+the+Future+with+Code!" alt="Typing SVG" />
 
 ---
 
@@ -54,7 +54,6 @@
   <img src="https://skillicons.dev/icons?i=git" alt="Git" />
   <img src="https://skillicons.dev/icons?i=docker" alt="Docker" />
   <img src="https://skillicons.dev/icons?i=linux" alt="Linux" />
-  <img src="https://skillicons.dev/icons?i=githubactions" alt="GitHub Actions" />
   <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" />
 </p>
 
@@ -89,86 +88,6 @@
 
 ---
 
-## 📦 Featured Projects
-
-### 🕒 Recently Updated Repositories
-
-<div id="recent-repos">
-  <p>Loading repositories...</p>
-</div>
-
-### ⭐ Most Popular Repositories
-
-<div id="popular-repos">
-  <p>Loading repositories...</p>
-</div>
-
-<script>
-  const GITHUB_USERNAME = "danilo631"; // Substitua pelo seu nome de usuário
-
-  // Função para buscar repositórios recentes
-  async function fetchRecentRepositories() {
-    try {
-      const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=5`);
-      const repos = await response.json();
-
-      const recentReposHTML = repos
-        .map(
-          (repo) => `
-            <div style="background-color: #1e1e1e; color: #ffffff; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
-              <h3><a href="${repo.html_url}" target="_blank" style="text-decoration: none; color: #FFD700;">${repo.name}</a></h3>
-              <p style="margin: 5px 0; font-size: 14px; color: #b3b3b3;">${repo.description || "No description provided."}</p>
-              <div style="display: flex; gap: 10px;">
-                <span style="background-color: #2c2c2c; padding: 5px 10px; border-radius: 5px; font-size: 12px; color: #ffffff;">🌟 ${repo.stargazers_count}</span>
-                <span style="background-color: #2c2c2c; padding: 5px 10px; border-radius: 5px; font-size: 12px; color: #ffffff;">🍴 ${repo.forks_count}</span>
-              </div>
-            </div>
-          `
-        )
-        .join("");
-
-      document.getElementById("recent-repos").innerHTML = recentReposHTML;
-    } catch (error) {
-      console.error("Error fetching recent repositories:", error);
-      document.getElementById("recent-repos").innerHTML = "<p>Failed to load repositories.</p>";
-    }
-  }
-
-  // Função para buscar repositórios populares
-  async function fetchPopularRepositories() {
-    try {
-      const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=stars&per_page=5`);
-      const repos = await response.json();
-
-      const popularReposHTML = repos
-        .map(
-          (repo) => `
-            <div style="background-color: #1e1e1e; color: #ffffff; padding: 15px; border-radius: 10px; margin-bottom: 10px;">
-              <h3><a href="${repo.html_url}" target="_blank" style="text-decoration: none; color: #FFD700;">${repo.name}</a></h3>
-              <p style="margin: 5px 0; font-size: 14px; color: #b3b3b3;">${repo.description || "No description provided."}</p>
-              <div style="display: flex; gap: 10px;">
-                <span style="background-color: #2c2c2c; padding: 5px 10px; border-radius: 5px; font-size: 12px; color: #ffffff;">🌟 ${repo.stargazers_count}</span>
-                <span style="background-color: #2c2c2c; padding: 5px 10px; border-radius: 5px; font-size: 12px; color: #ffffff;">🍴 ${repo.forks_count}</span>
-              </div>
-            </div>
-          `
-        )
-        .join("");
-
-      document.getElementById("popular-repos").innerHTML = popularReposHTML;
-    } catch (error) {
-      console.error("Error fetching popular repositories:", error);
-      document.getElementById("popular-repos").innerHTML = "<p>Failed to load repositories.</p>";
-    }
-  }
-
-  // Carregar repositórios
-  fetchRecentRepositories();
-  fetchPopularRepositories();
-</script>
-
----
-
 ## ✉️ Contact Me
 
 <div align="center">
@@ -198,20 +117,16 @@
 ## ⚡ Fun Facts
 
 <div align="center">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <div id="fun-fact" style="text-align: center; font-size: 18px; margin-top: 20px;"></div>
-  <script>
-    const funFacts = [
-      "🎮 Gamer nas horas vagas",
-      "📚 Apaixonado por Sci-fi & Inteligência Artificial",
-      "🔧 Sempre quebrando a cabeça em algoritmos novos",
-      "🌱 Acreditando que o impossível só demora um pouco mais!"
-    ];
-    const typed = new Typed("#fun-fact", {
-      strings: funFacts,
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true
-    });
-  </script>
+  <p>🎮 Gamer nas horas vagas</p>
+  <p>📚 Apaixonado por Sci-fi & Inteligência Artificial</p>
+  <p>🔧 Sempre quebrando a cabeça em algoritmos novos</p>
+  <p>🌱 Acreditando que o impossível só demora um pouco mais!</p>
+</div>
+
+---
+
+## 🐍 Contribution Snake
+
+<div align="center">
+  ![Snake animation](https://github.com/danilo631/danilo631/blob/output/github-contribution-grid-snake.svg)
 </div>
