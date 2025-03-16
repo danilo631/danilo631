@@ -3,16 +3,21 @@ const axios = require("axios");
 
 // Configurações
 const GITHUB_USERNAME = "danilo631"; // Substitua pelo seu nome de usuário do GitHub
-const GITHUB_TOKEN = process.env.API_TOKEN; // Token do GitHub
+const API_TOKEN = process.env.API_TOKEN; // Token do GitHub
 
 // Função para buscar repositórios do GitHub
 async function fetchRepositories() {
   try {
-    const response = await axios.get(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=10`, {
-      headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {},
-    });
+    const [recentResponse, popularResponse] = await Promise.all([
+      axios.get(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=5`, {
+        headers: API_TOKEN ? { Authorization: `token ${API_TOKEN}` } : {},
+      }),
+      axios.get(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=stars&per_page=5`, {
+        headers: API_TOKEN ? { Authorization: `token ${API_TOKEN}` } : {},
+      }),
+    ]);
 
-    const repositories = response.data.map((repo) => ({
+    const recentRepos = recentResponse.data.map((repo) => ({
       name: repo.name,
       url: repo.html_url,
       description: repo.description || "No description provided.",
@@ -20,16 +25,36 @@ async function fetchRepositories() {
       forks: repo.forks_count,
     }));
 
-    return repositories;
+    const popularRepos = popularResponse.data.map((repo) => ({
+      name: repo.name,
+      url: repo.html_url,
+      description: repo.description || "No description provided.",
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+    }));
+
+    return { recentRepos, popularRepos };
   } catch (error) {
     console.error("Error fetching GitHub repositories:", error.message);
-    return [];
+    return { recentRepos: [], popularRepos: [] };
   }
 }
 
 // Função para gerar o conteúdo do README
-function generateReadme(repositories) {
-  const projectsSection = repositories
+function generateReadme({ recentRepos, popularRepos }) {
+  const recentProjectsSection = recentRepos
+    .map(
+      (repo) => `
+### [${repo.name}](${repo.url})
+
+${repo.description}
+
+⭐️ **Stars:** ${repo.stars} | 🍴 **Forks:** ${repo.forks}
+`
+    )
+    .join("\n");
+
+  const popularProjectsSection = popularRepos
     .map(
       (repo) => `
 ### [${repo.name}](${repo.url})
@@ -133,41 +158,17 @@ ${repo.description}
 
 ---
 
-## 📚 Featured Projects
+## 📦 Featured Projects
 
-${projectsSection}
+### 🕒 Recently Updated Repositories
+
+${recentProjectsSection}
 
 ---
 
-## 🧠 Skills
+### ⭐ Most Popular Repositories
 
-<div align="center">
-
-### Programming Languages
-<div style="display: flex; gap: 10px;">
-  <div style="background-color: #1e1e1e; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center; width: 150px;">
-    JavaScript<br>
-    <progress value="90" max="100"></progress> 90%
-  </div>
-  <div style="background-color: #1e1e1e; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center; width: 150px;">
-    Python<br>
-    <progress value="80" max="100"></progress> 80%
-  </div>
-</div>
-
-### Frameworks & Tools
-<div style="display: flex; gap: 10px;">
-  <div style="background-color: #1e1e1e; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center; width: 150px;">
-    React<br>
-    <progress value="85" max="100"></progress> 85%
-  </div>
-  <div style="background-color: #1e1e1e; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center; width: 150px;">
-    Node.js<br>
-    <progress value="75" max="100"></progress> 75%
-  </div>
-</div>
-
-</div>
+${popularProjectsSection}
 
 ---
 
