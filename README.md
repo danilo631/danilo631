@@ -98,13 +98,6 @@
 
 </div>
 
----
-
-## 🎧 Coding Vibes
-
-<div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzU3ZmQwNmYxZmY1ZjIyZTJhMzEzYzRkNzY0YzE5YjQwZjIyOTIwMTVmODg4NyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZFlyJmN0PWc/WSHMdL0O5Vt0/giphy.gif" width="400px" alt="Coding Gif"/>
-</div>
 
 ---
 
@@ -125,8 +118,3 @@
 
 ---
 
-## 🐍 Contribution Snake
-
-<div align="center">
-  ![Snake animation](https://github.com/danilo631/danilo631/blob/output/github-contribution-grid-snake.svg)
-</div>
